@@ -1,19 +1,21 @@
 # Uses python3
 import sys
 
-def get_fibonacci_last_digit_naive(n):
-    if n <= 1:
-        return n
-
-    previous = 0
-    current  = 1
-
-    for _ in range(n - 1):
-        previous, current = current, previous + current
-
-    return current % 10
-
-if __name__ == '__main__':
-    input = sys.stdin.read()
-    n = int(input)
-    print(get_fibonacci_last_digit_naive(n))
+def fib(n):
+    if n == -1:
+        return 0
+    if n== 0:
+        return 1
+    a=0
+    b=1
+    for i in range(n):
+        c = (a%10 + b%10)%10
+        a = b%10
+        b = c%10
+        if i == n-1:
+            return c%10
+    
+input = sys.stdin.read()
+token = input.split()
+n = int(token[0])
+print(fib(n-1))
