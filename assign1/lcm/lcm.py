@@ -19,4 +19,4 @@ def gcd(a,b):
 if __name__ == "__main__":
     input = sys.stdin.read()
     a, b = map(int, input.split())
-    print(int((a*b)/gcd(a, b)))
+    print(a*b//gcd(a, b))
