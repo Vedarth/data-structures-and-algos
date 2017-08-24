@@ -28,4 +28,7 @@ if __name__ == '__main__':
     input = sys.stdin.read()
     n = int(input)
     num = (n+2)%pisano(10)
-    print(fib(num-1,10)-1)
+    ans=fib(num-1,10)-1
+    if ans < 0:
+        ans = ans +10
+    print(ans)
