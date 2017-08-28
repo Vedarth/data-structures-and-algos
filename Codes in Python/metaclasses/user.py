@@ -1,5 +1,8 @@
-#use
-class Base:
-	def foo(self):
-		return 'foo'
+#user
+
+from library import Base
+
+class Derived(Base):
+	def bar(self):
+		return 'bar'
 	

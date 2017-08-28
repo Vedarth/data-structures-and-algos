@@ -1,10 +1,22 @@
 #library
 
-from library import Base
+import builtins
 
-assert hassattr(Base, 'foo'), "you broke it, you idiot!"
+class Base:
+	def foo(self):
+		return self.bar()
 
 
-class Derived(Base):
-	def bar(self):
-		return self.foo()
+old_bc = __build_class__
+
+
+def my_bc(fun, name, base=None, **kw):
+	if base is Base:
+		print('check if bar method is defined')
+	if base is not None:
+		return old_bc(fun, name, base, **kw)
+	return old_bc(fun, name, base, **kw)
+
+
+
+builtins.__build_class__ = my_bc
