@@ -2,8 +2,21 @@
 import sys
 
 def fast_count_segments(starts, ends, points):
-    cnt = [0] * len(points)
+    cnt = dict()
     #write your code here
+    counter = 0
+    i = 0
+    pands = sorted(starts+ends+points)
+    for point in pands:
+        if point in starts:
+            starts.remove(point)
+            counter+=1
+        elif point in points:
+            cnt[str(point)] = counter
+            i+=1
+        elif point in ends:
+            counter-=1
+            ends.remove(point)
     return cnt
 
 def naive_count_segments(starts, ends, points):
@@ -23,6 +36,6 @@ if __name__ == '__main__':
     ends   = data[3:2 * n + 2:2]
     points = data[2 * n + 2:]
     #use fast_count_segments
-    cnt = naive_count_segments(starts, ends, points)
-    for x in cnt:
-        print(x, end=' ')
+    cnt2 = fast_count_segments(starts, ends, points)
+    for x in points:
+        print(cnt2[str(x)], end=' ')
