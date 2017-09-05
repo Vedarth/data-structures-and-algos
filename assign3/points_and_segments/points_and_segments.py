@@ -5,26 +5,15 @@ def fast_count_segments(starts, ends, points):
     cnt = dict()
     #write your code here
     counter = 0
-    i = 0
-    pands = sorted(starts+ends+points)
+    pands = list(zip(starts,['a_start']*len(starts)))+list(zip(ends,['c_end']*len(ends)))+list(zip(points,['b_point']*len(points)))
+    pands.sort()
     for point in pands:
-        if point in starts:
-            starts.remove(point)
+        if point[1] == 'a_start':
             counter+=1
-        elif point in points:
-            cnt[str(point)] = counter
-            i+=1
-        elif point in ends:
+        elif point[1] == 'b_point':
+            cnt[point[0]] = counter
+        elif point[1] == 'c_end':
             counter-=1
-            ends.remove(point)
-    return cnt
-
-def naive_count_segments(starts, ends, points):
-    cnt = [0] * len(points)
-    for i in range(len(points)):
-        for j in range(len(starts)):
-            if starts[j] <= points[i] <= ends[j]:
-                cnt[i] += 1
     return cnt
 
 if __name__ == '__main__':
@@ -37,5 +26,5 @@ if __name__ == '__main__':
     points = data[2 * n + 2:]
     #use fast_count_segments
     cnt2 = fast_count_segments(starts, ends, points)
-    for x in points:
-        print(cnt2[str(x)], end=' ')
+    for point in points:
+        print(cnt2[point], end = ' ')
