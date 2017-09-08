@@ -52,5 +52,8 @@ n = data[0]
 x = data[1::2]
 y = data[2::2]
 a = list(zip(x, y))
-(p,q) = closestpair(a)
-print("{0:.9f}".format(math.sqrt((p[0]-q[0])**2 + (p[1]-q[1])**2)))
+if len(a) == 2:
+        print("{0:.9f}".format(math.sqrt((x[0]-x[1])**2 + (y[0]-y[1])**2)))
+else:
+        (p,q) = closestpair(a)
+        print("{0:.9f}".format(math.sqrt((p[0]-q[0])**2 + (p[1]-q[1])**2)))
