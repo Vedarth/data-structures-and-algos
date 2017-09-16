@@ -14,7 +14,7 @@ def inversionsCount(x):
         i, j = 0, 0
         a = leftArray; b = rightArray
         for k in range(len(a) + len(b) + 1):
-            if a[i] <= b[j]:
+            if a[i] >= b[j]:
                 x[k] = a[i]
                 i += 1
                 if i == len(a) and j != len(b):
@@ -23,7 +23,7 @@ def inversionsCount(x):
                         x[k] = b[j]
                         j += 1
                     break
-            elif a[i] > b[j]:
+            elif a[i] < b[j]:
                 x[k] = b[j]
                 print(len(a), a, i, b, j, x)
                 count += (len(a) - i)
@@ -33,11 +33,11 @@ def inversionsCount(x):
                         k+= 1
                         x[k] = a[i]
                         i += 1                    
-                    break   
+                    break
+    print(x)
     return x
 if __name__ == '__main__':
     input = sys.stdin.read()
-    n, *a = list(map(int, input.split()))
-    b = a
+    a = list(input.strip())
     inversionsCount(a)
     print(count)
