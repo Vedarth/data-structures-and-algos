@@ -4,6 +4,9 @@ class Employee:
 		self.last = last
 		self.email = first.lower() + '.' + last.lower() + '@company.com'
 		self.pay = pay
+
+	def fullname(self):
+		return('{} {}'.format(self.first, self.last))
 #Here we have declared the necessary class variables.
 
 emp_1 = Employee('Corey','Schafer',1000000)
@@ -15,3 +18,5 @@ print(emp_2)
 
 print(emp_1.email)
 print(emp_2.email)
+print(emp_1.fullname())
+print(emp_2.fullname())
