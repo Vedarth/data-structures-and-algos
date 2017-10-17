@@ -16,8 +16,11 @@ class Employee:
 		
 emp_1 = Employee('Vedarth','Sharma',1000000)
 emp_2 = Employee('Corey','Schafer',100000)
-
-print(emp_1.pay,emp_2.pay)
-
+Employee.raise_amount = 1.04
+emp_1.raise_amount=1.05
+print(emp_1.__dict__)
+print(Employee.raise_amount, Employee.__dict__)
+emp_2.apply_raise()
 emp_1.apply_raise()
-print(emp_1.pay,emp_2.pay)
+print(emp_2.pay, emp_1.pay)
+
