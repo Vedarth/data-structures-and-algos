@@ -17,5 +17,17 @@ class Employee:
 	def apply_raise(self):
 		self.pay = int(self.pay * self.raise_amount)
 
-dev_1 = Developer('Vedarth','Sharma',1000000, 'Python')
-dev_2 = Developer('Corey','Schafer',100000, 'Java')
+	def __repr__(self):#If we do not declare str and only repr str will call repr instead.So make sure you atleast have repr.
+		return "Employee('{}','{}','{}')".format(self.first, self.last, self.pay)
+	def __str__(self):
+		return "{} - {}".format( self.fullname(),self.email)
+
+emp_1 = Employee('Vedarth','Sharma',1000000)
+emp_2 = Employee('Corey','Schafer',100000)
+
+print(emp_1)
+print(repr(emp_1))
+print(str(emp_1))
+
+print(emp_1.__repr__())
+print(emp_1.__str__())
