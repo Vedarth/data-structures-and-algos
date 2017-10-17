@@ -2,7 +2,7 @@ def merge(x, left, middle,right):
     left_array = x[left:middle]
     right_array = x[middle:right]
     k, l = 0, 0
-    x[left:right] = [left_array[k++] if left_array[k]<right_array[l] else right_array[l++] for i in range(right-left)]
+    
     
 
 

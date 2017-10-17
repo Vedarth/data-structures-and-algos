@@ -3,3 +3,4 @@ def change(amount,denominations):
     while amount!=0:
         if amount%denominations[i]==0:
             amount -= amount/denominations[i]
+        i++
