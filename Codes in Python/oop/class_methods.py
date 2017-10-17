@@ -25,6 +25,8 @@ class Employee:
 	def from_string(cls, emp_str):
 		first, last, pay = emp_str.split('-')
 		return cls(first,last,int(pay))
+
+	
 		
 emp_1 = Employee('Vedarth','Sharma',1000000)
 emp_2 = Employee('Corey','Schafer',100000)
