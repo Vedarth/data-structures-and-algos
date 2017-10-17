@@ -19,8 +19,14 @@ class Employee:
 
 	def __repr__(self):#If we do not declare str and only repr str will call repr instead.So make sure you atleast have repr.
 		return "Employee('{}','{}','{}')".format(self.first, self.last, self.pay)
+	
+
 	def __str__(self):
 		return "{} - {}".format( self.fullname(),self.email)
+	
+
+	def __add__(self, other):
+		return self.pay + other.pay
 
 emp_1 = Employee('Vedarth','Sharma',1000000)
 emp_2 = Employee('Corey','Schafer',100000)
@@ -31,3 +37,10 @@ print(str(emp_1))
 
 print(emp_1.__repr__())
 print(emp_1.__str__())
+
+print(emp_1 + emp_2)
+
+print(1+2)
+
+print(int.__add__(1,2))
+print(str.__add__('1', '2'))
