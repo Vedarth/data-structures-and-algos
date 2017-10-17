@@ -21,8 +21,8 @@ class Developer(Employee):
 	pass
 
 
-dev_1 = Employee('Vedarth','Sharma',1000000)
-dev_2 = Employee('Corey','Schafer',100000)
+dev_1 = Developer('Vedarth','Sharma',1000000)
+dev_2 = Developer('Corey','Schafer',100000)
 
 print(dev_1.email)
 print(dev_2.email)
