@@ -16,13 +16,23 @@ class Employee:
 		first, last = name.split()
 		self.first, self.last = first, last
 
+	@fullname.deleter
+	def fullname(self):
+		print("Delete Name {}".format(self.first))
+		self.first = None
+		self.last = None
+
 emp_1 = Employee('Corey','Schafer',1000000)
 
 emp_1.first = 'Jim'
 
 emp_1.fullname = 'Jim Maa'
 
+
+
 print(emp_1.first)
 print(emp_1.email)
 print(emp_1.fullname)
 
+del emp_1.fullname
+print(emp_1.first)
