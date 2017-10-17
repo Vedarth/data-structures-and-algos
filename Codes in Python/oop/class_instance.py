@@ -5,7 +5,7 @@ class Employee:
 		self.email = first.lower() + '.' + last.lower() + '@company.com'
 		self.pay = pay
 
-	def fullname(self):
+	def fullname(self):#if you don't put the self argument and not use this function no error will come but as soon as you try to access this function error will come
 		return('{} {}'.format(self.first, self.last))
 #Here we have declared the necessary class variables.
 
@@ -13,10 +13,6 @@ emp_1 = Employee('Corey','Schafer',1000000)
 emp_2 = Employee('Vedarth','Sharma',10000000)
 
 
-print(emp_1)
-print(emp_2)
-
-print(emp_1.email)
-print(emp_2.email)
 print(emp_1.fullname())
 print(emp_2.fullname())
+print(Employee.fullname(emp_2))
