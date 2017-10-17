@@ -1,19 +1,15 @@
 class Employee:
-	pass
+	def __init__(self, first,last,pay):#Here self is the variable that we will be using inside the class to refer to the instance
+		self.first = first
+		self.last = last
+		self.email = first.lower() + '.' + last.lower() + '@company.com'
+		self.pay = pay
+#Here we have declared the necessary class variables.
 
-emp_1 = Employee()
+emp_1 = Employee('Corey','Schafer',1000000)
+emp_2 = Employee('Vedarth','Sharma',10000000)
 
-emp_2 = Employee()
 
-emp_1.first = 'Corey'
-emp_1.last = 'Schafer'
-emp_1.email = 'corey.schafer@company.com'
-emp_1.pay = 1000000
-
-emp_2.first = 'Vedarth'
-emp_2.last = 'Sharma'
-emp_2.email = 'vedarth.sharma@company.com'
-emp_2.pay = 10000000
 print(emp_1)
 print(emp_2)
 
